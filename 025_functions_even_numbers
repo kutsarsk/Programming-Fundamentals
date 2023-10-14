@@ -1,0 +1,8 @@
+input_line = input().split()
+sequence_of_numbers = []
+for item in input_line:
+    sequence_of_numbers.append(int(item))
+is_even = lambda x: x % 2 == 0
+even = list(filter(is_even, sequence_of_numbers))
+
+print(even)
