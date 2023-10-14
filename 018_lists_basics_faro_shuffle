@@ -1,0 +1,15 @@
+cards = input().split(" ")
+shuffles = int(input())
+
+for shuffle in range(shuffles):
+    middle = len(cards) // 2
+    first_part = cards[0:middle]
+    second_part = cards[middle:]
+    cards_after_shuffle = []
+
+    for card_index in range(len(first_part)):
+        cards_after_shuffle.append(first_part[card_index])
+        cards_after_shuffle.append(second_part[card_index])
+    cards = cards_after_shuffle
+
+print(cards_after_shuffle)
