@@ -1,0 +1,11 @@
+first_string = input()
+second_string = input()
+latest_string = first_string
+
+for index in range(len(first_string)):
+    first_part = second_string[:index + 1]
+    second_part = first_string[index + 1:]
+    new_string = first_part + second_part
+    if new_string != latest_string:
+        print(new_string)
+        latest_string = new_string
