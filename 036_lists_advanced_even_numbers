@@ -1,0 +1,4 @@
+numbers = list(map(int, input().split(", ")))
+indices_even_or_not = map(lambda x: x if numbers[x] % 2 == 0 else 'no', range(len(numbers)))
+indices_of_even = list(filter(lambda y: y != 'no', indices_even_or_not))
+print(indices_of_even)
