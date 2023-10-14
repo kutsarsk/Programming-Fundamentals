@@ -1,0 +1,12 @@
+character_1 = input()
+character_2 = input()
+string = []
+
+
+def string_between(x, y):
+    for number in range(ord(x) + 1, ord(y)):
+        string.append(chr(number))
+    return string
+
+
+print(*string_between(character_1, character_2), end=" ")
