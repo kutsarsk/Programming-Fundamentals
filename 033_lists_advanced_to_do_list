@@ -1,0 +1,14 @@
+input_data = input()
+to_do = [0] * 100
+
+while input_data != "End":
+    note = input_data.split("-")
+    importance = int(note[0])
+    task = note[1]
+    to_do.pop(int(importance) - 1)
+    to_do.insert(int(importance) - 1, task)
+    input_data = input()
+
+to_do_list = [item for item in to_do if item != 0]
+
+print(to_do_list)
