@@ -1,0 +1,18 @@
+sequence_of_numbers = input().split(" ")
+string = input()
+string_as_list = list(string)
+sum_of_digits = 0
+message = []
+
+for element in sequence_of_numbers:
+    for digit in element:
+        sum_of_digits += int(digit)
+    if sum_of_digits < len(string_as_list):
+        character = string_as_list[sum_of_digits]
+    else:
+        character = string_as_list[sum_of_digits % len(string)]
+    message.append(character)
+    string_as_list.remove(character)
+    sum_of_digits = 0
+
+print(*message, sep="")
