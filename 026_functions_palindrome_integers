@@ -1,0 +1,11 @@
+def palindrome(x):
+    if x[::] == x[::-1]:
+        is_palindrome = True
+    else:
+        is_palindrome = False
+    return is_palindrome
+
+
+list_of_integers = input().split(", ")
+for integer in list_of_integers:
+    print(palindrome(integer))
