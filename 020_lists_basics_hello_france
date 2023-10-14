@@ -1,0 +1,29 @@
+items = input()
+budget = float(input())
+new_prices = []
+current_budget = budget
+item_list = list(items.split("|"))
+for item in item_list:
+    item_values = list(item.split("->"))
+    item_type = item_values[0]
+    item_price = float(item_values[1])
+    if item_price <= current_budget and ((item_type == "Clothes" and item_price <= 50.00)
+                                         or (item_type == "Shoes" and item_price <= 35.00)
+                                         or (item_type == "Accessories" and item_price <= 20.50)):
+        current_budget -= item_price
+        new_price = item_price * 1.40
+        new_prices.append(new_price)
+
+for new_price in new_prices:
+    price = float(new_price)
+    current_budget += price
+    print(f"{price:.2f}", end=" ")
+
+print()
+profit = current_budget - budget
+print(f"Profit: {profit:.2f}")
+
+if current_budget >= 150:
+    print("Hello, France!")
+else:
+    print("Not enough money.")
